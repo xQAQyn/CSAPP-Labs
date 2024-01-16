@@ -262,21 +262,16 @@ int logicalNeg(int x) {
 int howManyBits(int x) {
   int sign, a16, a8, a4, a2, a1, same;
   sign = x >> 31;
-
   same = !!(x ^ sign);
 
   a16 = (!!((x >> 16) ^ sign)) << 4;
   x >>= a16;
-
   a8 = (!!((x >> 8) ^ sign)) << 3;
   x >>= a8;
-
   a4 = (!!((x >> 4) ^ sign)) << 2;
   x >>= a4;
-
   a2 = (!!((x >> 2) ^ sign)) << 1;
   x >>= a2;
-
   a1 = (!!((x >> 1) ^ sign));
   x >>= a1;
 
